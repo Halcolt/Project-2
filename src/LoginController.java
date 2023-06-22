@@ -5,14 +5,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 public class LoginController {
     @FXML
     private TextField usernameTextField;
@@ -45,6 +44,12 @@ public class LoginController {
                 if (resultSet.next()) {
                     // Login successful
                     System.out.println("Login successful!");
+                    BufferedWriter writer = new BufferedWriter(new FileWriter("tmp.txt"));
+                    writer.write(username);
+                    writer.newLine();
+                    writer.write(Passwords);
+                    writer.newLine();
+                    writer.close();
 
                     // Load the new FXML file and set it as the new scene
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("E_Menu.fxml"));

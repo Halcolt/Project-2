@@ -39,7 +39,7 @@ CREATE TABLE menu (
   ice INT NULL
 );
 
-CREATE TABLE import (
+CREATE TABLE imports (
   ID INT PRIMARY KEY AUTO_INCREMENT,
   Username VARCHAR(255) NOT NULL,
   working_place VARCHAR(255) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE import (
 );
 
 
-CREATE TABLE export (
+CREATE TABLE exports (
   ID INT PRIMARY KEY AUTO_INCREMENT,
   Username VARCHAR(255) NOT NULL,
   item VARCHAR(255) NOT NULL,
@@ -81,6 +81,6 @@ CREATE TABLE export (
 );
 
 select * from login
-
+select * from imports
 
 drop database coffeeshop_management
